@@ -1,32 +1,26 @@
-# Uber Demand-Supply Gap Analysis
+# Uber Fare & Ride Demand Analysis
+
+## Project Overview
+This project analyzes Uber ride data to understand ride demand patterns, fare distribution, passenger behavior, and trip characteristics. The analysis focuses on extracting business insights that could help ride-hailing platforms optimize pricing, driver allocation, and operational efficiency.
 
 ## Business Problem
+Ride-hailing platforms like Uber must balance pricing, demand, and driver supply. Understanding how ride fares vary with distance, time, and passenger patterns helps improve operational decision-making and customer experience.
 
-Uber operations team noticed a large number of ride requests are not being fulfilled due to driver unavailability or cancellations.
-
-This project analyzes Uber ride request data to identify demand-supply gaps and provide business recommendations to improve ride completion rates.
-
-## Objectives
-
-1. Identify time periods with highest unfulfilled demand
-2. Analyze driver cancellations
-3. Compare airport vs city demand
-4. Suggest operational improvements
+## Dataset Description
+The dataset contains Uber ride records including fare amount, pickup and dropoff locations, pickup timestamps, and passenger counts.
 
 ## Tools Used
+- Python (Pandas, Matplotlib)
+- SQL
+- Jupyter Notebook
+- Data Visualization
 
-SQL  
-Python (Pandas, Matplotlib)  
-Jupyter Notebook
+## Key Analysis
+- Fare distribution analysis
+- Trip distance estimation
+- Passenger count analysis
+- Demand patterns by hour and day
+- Geographic ride patterns
 
-## Key Insights
-
-- Morning hours show high demand from city to airport
-- Evening hours show demand from airport to city
-- Large number of requests fail due to driver shortage
-
-## Business Recommendations
-
-- Increase driver availability during peak hours
-- Introduce driver incentives during high demand periods
-- Optimize driver allocation near airports
+## Business Insights
+The project identifies patterns in ride demand and pricing that can help improve driver allocation and pricing strategies.
