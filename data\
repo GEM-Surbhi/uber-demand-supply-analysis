@@ -1,0 +1,19 @@
+## Data Folder
+
+The `data` folder contains the raw dataset used for analysis.
+
+### uber.csv
+
+This dataset contains Uber ride records with information about fares, pickup locations, dropoff locations, timestamps, and passenger counts.
+
+Columns included:
+
+- Unnamed: 0 → Row index from the dataset
+- key → Unique identifier for each ride
+- fare_amount → Total fare charged for the ride
+- pickup_datetime → Date and time when the ride started
+- pickup_longitude → Longitude of pickup location
+- pickup_latitude → Latitude of pickup location
+- dropoff_longitude → Longitude of dropoff location
+- dropoff_latitude → Latitude of dropoff location
+- passenger_count → Number of passengers in the ride
