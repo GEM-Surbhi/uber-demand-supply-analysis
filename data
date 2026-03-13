@@ -1,19 +1,234 @@
-## Data Folder
+# Uber Dataset Description
 
-The `data` folder contains the raw dataset used for analysis.
+## Overview
 
-### uber.csv
+This dataset contains historical ride data from Uber, including fare information, pickup and dropoff coordinates, timestamps, and passenger counts. The dataset is commonly used for analyzing ride pricing patterns, trip demand behavior, and geographical ride trends.
 
-This dataset contains Uber ride records with information about fares, pickup locations, dropoff locations, timestamps, and passenger counts.
+The dataset used in this project contains **200,000 ride records** and **9 variables** describing different aspects of each ride.
 
-Columns included:
+This dataset allows analysts to explore relationships between **fare pricing, trip distance, time of travel, and passenger behavior**.
 
-- Unnamed: 0 → Row index from the dataset
-- key → Unique identifier for each ride
-- fare_amount → Total fare charged for the ride
-- pickup_datetime → Date and time when the ride started
-- pickup_longitude → Longitude of pickup location
-- pickup_latitude → Latitude of pickup location
-- dropoff_longitude → Longitude of dropoff location
-- dropoff_latitude → Latitude of dropoff location
-- passenger_count → Number of passengers in the ride
+---
+
+# Dataset Structure
+
+Total Rows: **200,000**
+
+Total Columns: **9**
+
+Each row represents a **single Uber trip**.
+
+---
+
+# Column Descriptions
+
+### 1. Unnamed: 0
+
+Type: Integer
+
+This column represents the row index from the original dataset export.
+It does not contain meaningful analytical information and is typically removed during data cleaning.
+
+Example:
+
+```
+24238194
+27835199
+```
+
+---
+
+### 2. key
+
+Type: String
+
+A unique identifier assigned to each Uber trip record.
+It also contains timestamp information in some cases.
+
+Example:
+
+```
+2015-05-07 19:52:06.0000003
+```
+
+This column can be used to ensure **record uniqueness**.
+
+---
+
+### 3. fare_amount
+
+Type: Float
+
+Represents the total fare charged for the trip in **US dollars**.
+
+Example values:
+
+```
+4.5
+16.9
+7.5
+```
+
+This is one of the **primary variables of interest**, used to analyze:
+
+* fare distribution
+* pricing trends
+* relationship between fare and trip distance
+
+---
+
+### 4. pickup_datetime
+
+Type: Datetime
+
+Timestamp representing when the trip started.
+
+Example:
+
+```
+2015-05-07 19:52:06
+```
+
+This column is important for extracting:
+
+* hour of day
+* day of week
+* peak demand times
+* seasonal ride patterns
+
+---
+
+### 5. pickup_longitude
+
+Type: Float
+
+Longitude coordinate of the trip pickup location.
+
+Example:
+
+```
+-73.982154
+```
+
+Combined with latitude, this helps determine **geographic pickup locations**.
+
+---
+
+### 6. pickup_latitude
+
+Type: Float
+
+Latitude coordinate of the pickup location.
+
+Example:
+
+```
+40.767937
+```
+
+These geographic coordinates help estimate **trip distances and ride density areas**.
+
+---
+
+### 7. dropoff_longitude
+
+Type: Float
+
+Longitude coordinate of the dropoff location.
+
+Example:
+
+```
+-73.964630
+```
+
+Used together with pickup coordinates to estimate **trip distance**.
+
+---
+
+### 8. dropoff_latitude
+
+Type: Float
+
+Latitude coordinate of the trip destination.
+
+Example:
+
+```
+40.723217
+```
+
+This allows analysis of **destination hotspots**.
+
+---
+
+### 9. passenger_count
+
+Type: Integer
+
+Represents the number of passengers in the ride.
+
+Example values:
+
+```
+1
+2
+5
+```
+
+This variable can be used to analyze:
+
+* average passengers per trip
+* relationship between passenger count and fare
+* ride-sharing patterns
+
+---
+
+# Potential Analytical Opportunities
+
+This dataset enables multiple types of analysis including:
+
+### Fare Analysis
+
+* Distribution of ride fares
+* Detection of unusually high or low fares
+* Relationship between fare and trip distance
+
+### Time-Based Demand Analysis
+
+* Ride frequency by hour
+* Peak travel times
+* Weekday vs weekend demand patterns
+
+### Passenger Behavior Analysis
+
+* Average passengers per trip
+* Popular passenger group sizes
+
+### Geographic Analysis
+
+* Pickup hotspots
+* Popular destination areas
+* Estimated trip distance calculations
+
+---
+
+# Data Limitations
+
+Some limitations of the dataset include:
+
+* Exact street-level location names are not provided (only coordinates)
+* Distance is not explicitly recorded and must be estimated using coordinates
+* Some records may contain invalid coordinates or fare values and require cleaning
+
+---
+
+# Intended Use in This Project
+
+In this project, the dataset will be used to:
+
+1. Clean and preprocess ride data
+2. Engineer features such as trip distance and ride hour
+3. Analyze fare pricing patterns
+4. Identify demand trends across time
+5. Generate business insights relevant to ride-hailing platforms
